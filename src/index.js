@@ -3,10 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import PostList from './Api/PostList'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import PostForm from './Api/PostForm';
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import PostForm from './Api/PostForm';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>  
+    
+    <Routes>
+      <Route path="/" element={<PostList />}/>
+      <Route path='/PostForm' element={<PostForm/>}/>
+    </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
